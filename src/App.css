@@ -1,5 +1,6 @@
 .App {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align:start;
   padding-right: 10%;
@@ -17,25 +18,24 @@
 
 .contentAllList{
   display: flex;
-  flex-direction: column;
   margin-left: 10px;
   padding-left: 20px;
 }
 
-.contentAllList > div{
+.App > div{
   display: flex;
   justify-content: space-between;
 }
 
-.contentAllList > div > h1{
+.App > div > h1{
   color: black;
   font-weight: 600;
-  margin-left: 8%;
+  margin-left: 5.2%;
 }
 
-.contentAllList > div > button{
-  width: 35%;
-  height: 65%;
+.App > div > button{
+  width: 25%;
+  height: 75%;
   padding: 5px;
   background-color: #555A88;
   border: none;
@@ -114,14 +114,26 @@ ul {
 /******************************Form********************************/
 
 .contentForm {
-  width: 40%;
-  height: 550px;
-  border: 2px solid rgb(214, 214, 214);
+  width: 100%;
+  height: auto;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(4px);
+  border: 2px solid rgb(214, 214, 214);
+  /* margin-left: 10%; */
+}
+
+.cardForm{
+  box-shadow: 2px 2px 8px rgba (0, 0, 0, .3);
+  padding: 10%;
+  border-radius: 10px; 
+  width: 100%;
 }
 
 .containerDates {

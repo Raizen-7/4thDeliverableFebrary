@@ -1,12 +1,14 @@
 import React from 'react';
 
 const UsersList = ({ users }) => {
+
+
     return (
         <div className='contentAllList'>
-        <div>
+        {/* <div>
             <h1> USERS </h1>
-            <button> + Create new user </button>
-        </div>
+            <button onClick={() => setShowForm(true)}> + Create new user </button>
+        </div> */}
         <div className='contentUsersList'>
             <ul className='usersList'>
                 {

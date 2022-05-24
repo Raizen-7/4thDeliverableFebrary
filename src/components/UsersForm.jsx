@@ -10,13 +10,14 @@ const UsersForm = () => {
 
     const subMit = e => {
         e.preventDefault();
-        const user = () => {
-            first_name : firstName,
-            last_name ; lastName, 
-            email,
-            password,
-            birthday
-        }
+        // const user = () => {
+        //     first_name : firstName,
+        //     last_name ; lastName, 
+        //     email,
+        //     password,
+        //     birthday
+        // }
+        console.log('make submit')
         
     }
     console.log(subMit);
