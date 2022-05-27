@@ -3,13 +3,14 @@ import React, { useEffect, useState } from 'react';
 
 const UsersForm = ({getUsers, userSelected, deselectUser, close}) => {
 
+    // estados para el control de input
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [birthday, setBirthday] = useState("");
 
-
+    //hook para detectar la selecion del usuario a editar
     useEffect( () => {
      console.log(userSelected);
      if(userSelected !== null){
@@ -28,7 +29,8 @@ const UsersForm = ({getUsers, userSelected, deselectUser, close}) => {
         setBirthday("");
      }
     }, [userSelected]);
-    
+
+    //funcion para la carga de datos creados o editados desde el formulario por medio de OnSubmit 
     const submit = e => {
         e.preventDefault();
         const user = {

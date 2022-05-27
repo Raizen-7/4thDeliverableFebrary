@@ -4,12 +4,16 @@ const UsersList = ({ users, selectUser, deleteUser, formShow }) => {
 
 
     return (
+        //contenedor para el despliegue de las tarjetas listadas de los usuarios registrados
         <div className='contentAllList'>
             <div className='contentUsersList'>
                 <ul className='usersList'>
-                    {
+
+                    {//metodo map para recorrer el arreglo obtenido de la API
                         users.map(user => (
-                            <div className='card'>
+
+                            // Tarjeta contenedora Usuario
+                            <div className='card'> 
                                 <li className='userId' key={user.id}>
                                     <h3 className='userName'>{user.first_name} {user.last_name} </h3>
                                     <p className='emailAndBirthday'>EMAIL</p>
@@ -19,6 +23,8 @@ const UsersList = ({ users, selectUser, deleteUser, formShow }) => {
                                         <i className="fa-solid fa-gift"></i>
                                         <p className='title'>{user.birthday}</p>
                                     </div>
+
+                                    { /*Contenedor de los botones para eliminar y editar */}
                                     <div className='divButton'>
                                         <button onClick={()=> deleteUser(user.id)} className='deleteicon'>
                                             <i className="fa-solid fa-trash-can"></i>
