@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
-const UsersForm = () => {
+const UsersForm = ({getUsers, userSelected, deselectUser, close}) => {
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -8,22 +9,60 @@ const UsersForm = () => {
     const [password, setPassword] = useState("");
     const [birthday, setBirthday] = useState("");
 
-    const subMit = e => {
+
+    useEffect( () => {
+     console.log(userSelected);
+     if(userSelected !== null){
+
+         setFirstName(userSelected.first_name);
+         setLastName(userSelected.last_name);
+         setEmail(userSelected.email);
+         setPassword(userSelected.password);
+         setBirthday(userSelected.birthday); 
+
+     }else{
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setPassword("");
+        setBirthday("");
+     }
+    }, [userSelected]);
+    
+    const submit = e => {
         e.preventDefault();
-        // const user = () => {
-        //     first_name : firstName,
-        //     last_name ; lastName, 
-        //     email,
-        //     password,
-        //     birthday
-        // }
-        console.log('make submit')
-        
-    }
-    console.log(subMit);
+        const user = {
+            first_name : firstName,
+            last_name : lastName, 
+            email,
+            password,
+            birthday
+        }
+        {
+            if(userSelected !== null){
+                alert("Editing complete")
+               axios.put(`https://users-crud1.herokuapp.com/users/${userSelected.id}/`, user)
+                    .then(() => {
+                        getUsers();
+                        deselectUser();
+                    });
+
+            }else{
+                axios.post('https://users-crud1.herokuapp.com/users/', user)
+                     .then(() => getUsers())
+                     .catch(error => console.log(error.response));        
+            }
+        }
+    };
+
+    
+
     return (
         <div className='contentForm'>
-            <form className='cardForm' onSubmit={subMit}>
+            <form className='cardForm' onSubmit={submit}>
+                <button className='close' onClick={close} >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
                 <h1>New User</h1>
                 <div className='container'>
                     <div className='containerDates'>
@@ -86,7 +125,14 @@ const UsersForm = () => {
                             value={birthday}
                         />
                     </div>
-                    <button className='buttonAdd'>Add new User</button>
+                    <button type='submit' className='buttonAdd'>Add new User</button>
+                    {   
+                        userSelected !== null &&(
+                            <button type='button' className='cancel' onClick={deselectUser} >
+                                Cancel
+                            </button>
+                        )
+                    }
                 </div>
 
             </form>

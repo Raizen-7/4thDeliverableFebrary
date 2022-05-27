@@ -6,18 +6,13 @@
   padding-right: 10%;
 }
 
-/* .body {
+.contentTitle{
   width: 100%;
-  height: 1000pxz;
-  background-color: #D93F3F;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: 100px;
-} */
+  align-items: center;
+}
 
 .contentAllList{
-  display: flex;
+
   margin-left: 10px;
   padding-left: 20px;
 }
@@ -30,25 +25,27 @@
 .App > div > h1{
   color: black;
   font-weight: 600;
-  margin-left: 5.2%;
+  margin-left: 8.8%
 }
 
 .App > div > button{
-  width: 25%;
-  height: 75%;
+  width: 19%;
+  height: 45px;
   padding: 5px;
   background-color: #555A88;
   border: none;
   color: #FFFFFF;
+  margin-right: 6.5%;
 }
 
 .card {
-  width: 381px;
-  height: 274px;
-  margin-bottom: 5%;
+  width: 30%;
+  height: 50%;
   padding-left: 3%;
   padding-right: 3%;
   border: 2px solid rgb(214, 214, 214);
+  FLOAT: left;
+  MARGIN: 1% 1%; 
 }
 
 .userName {
@@ -111,22 +108,33 @@ ul {
   list-style: none;
 }
 
+.contentUsersList{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+}
+
+
+
 /******************************Form********************************/
 
 .contentForm {
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: center;
+  width: 30%;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  backdrop-filter: blur(4px);
   border: 2px solid rgb(214, 214, 214);
-  /* margin-left: 10%; */
+  margin-left: 30%;
+  background-color: #FFFFFF;
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+
+
 }
 
 .cardForm{
@@ -134,7 +142,18 @@ ul {
   padding: 10%;
   border-radius: 10px; 
   width: 100%;
+  position: relative;
 }
+
+.gift{
+    display: flex;
+    padding: 1.5px;
+    align-items: baseline;
+  }
+
+.gift i{
+margin-right: 5px;
+}  
 
 .containerDates {
   margin-bottom: 4%;
@@ -158,8 +177,29 @@ font-weight: 600;
   background-color: #555A88;
   border: none;
   color: #FFFFFF;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.container button.cancel{
+  width: 100%;
+  padding: 5px;
+  background-color: #D85D5D;
+  color: #FFFFFF;
+  font-weight: 600;
 }
 
 .cardForm{
-  width: 80%;
+  width: 100%;
+}
+
+.close{
+  width: 10%;
+  height: 30px;
+  padding: 5px;
+  background-color:transparent;
+  color: #000000;
+  border: none;
+  font-size: 1.5em;
+  font-weight: 600;
 }
