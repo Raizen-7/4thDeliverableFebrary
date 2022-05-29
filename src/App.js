@@ -53,23 +53,27 @@ function App() {
         {/* botón para abrir el formulario */}
         <button onClick={() => setShowForm(true)}> + Create new user </button>
       </div>
-      <UsersList 
-      // props
-        users={users} 
-        selectUser={selectUser}
-        deleteUser={deleteUser}
-        formShow={formShow} 
-      />
-      { showForm && 
-        <UsersForm  
-        //props
-        getUsers={getUsers} 
-        userSelected={userSelected}
-        deselectUser={deselectUser} 
-        // prop con funcion para cerrar el formulario
-        close={() => setShowForm(false)}
-        /> 
-      }
+      {/* <div className="containerComponents"> */}
+        <UsersList 
+          // props
+          users={users} 
+          selectUser={selectUser}
+          deleteUser={deleteUser}
+          formShow={formShow} 
+        />
+        { showForm && 
+          <UsersForm  
+          //props
+          getUsers={getUsers} 
+          userSelected={userSelected}
+          deselectUser={deselectUser} 
+          // prop con funcion para cerrar el formulario
+          close={() => setShowForm(false)}
+          /> 
+        }
+      {/* </div> */}
+        
+
     </div>
   );
 }

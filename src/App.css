@@ -11,12 +11,6 @@
   align-items: center;
 }
 
-.contentAllList{
-
-  margin-left: 10px;
-  padding-left: 20px;
-}
-
 .App > div{
   display: flex;
   justify-content: space-between;
@@ -38,9 +32,26 @@
   margin-right: 6.5%;
 }
 
+
+/***********************************UsersList*************************************/
+.contentAllList{
+  margin-left: 10px;
+  padding-left: 20px;
+}
+
+.contentUsersList{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+}
+.usersList{
+  width: 100%;
+}
+
 .card {
-  width: 30%;
-  height: 50%;
+  width: 31%;
+  height:260px;
   padding-left: 3%;
   padding-right: 3%;
   border: 2px solid rgb(214, 214, 214);
@@ -70,7 +81,6 @@
   justify-content: right;
   align-items: center;
 }
-
 
 .deleteicon{
   width: 43px;
@@ -108,33 +118,25 @@ ul {
   list-style: none;
 }
 
-.contentUsersList{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 2%;
-}
 
 
-
-/******************************Form********************************/
+/******************************UsersForm********************************/
 
 .contentForm {
-  width: 30%;
+  width: 20%;
+  height: 70%;
   align-items: center;
   position: fixed;
-  top: 0;
+  top: 110px;
   left: 0;
   right: 0;
   bottom: 0;
   border: 2px solid rgb(214, 214, 214);
-  margin-left: 30%;
+  margin-left: 35%;
   background-color: #FFFFFF;
   backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
-
-
 }
 
 .cardForm{
@@ -202,4 +204,7 @@ font-weight: 600;
   border: none;
   font-size: 1.5em;
   font-weight: 600;
+  position: absolute;
+  top: -10px;
+  right: 20px;
 }

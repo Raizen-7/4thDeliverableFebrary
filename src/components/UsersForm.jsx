@@ -22,6 +22,7 @@ const UsersForm = ({getUsers, userSelected, deselectUser, close}) => {
          setBirthday(userSelected.birthday); 
 
      }else{
+
         setFirstName("");
         setLastName("");
         setEmail("");
@@ -41,7 +42,7 @@ const UsersForm = ({getUsers, userSelected, deselectUser, close}) => {
             birthday
         }
         {
-            if(userSelected !== null){
+            if( userSelected !== null ){
                 alert("Editing complete")
                axios.put(`https://users-crud1.herokuapp.com/users/${userSelected.id}/`, user)
                     .then(() => {
@@ -61,7 +62,7 @@ const UsersForm = ({getUsers, userSelected, deselectUser, close}) => {
 
     return (
         <div className='contentForm'>
-            <form className='cardForm' onSubmit={submit}>
+            <form className='cardForm' onSubmit={submit} >
                 <button className='close' onClick={close} >
                     <i class="fa-solid fa-xmark"></i>
                 </button>
@@ -127,7 +128,7 @@ const UsersForm = ({getUsers, userSelected, deselectUser, close}) => {
                             value={birthday}
                         />
                     </div>
-                    <button type='submit' className='buttonAdd'>Add new User</button>
+                    <button className='buttonAdd' >Add new User</button>
                     {   
                         userSelected !== null &&(
                             <button type='button' className='cancel' onClick={deselectUser} >

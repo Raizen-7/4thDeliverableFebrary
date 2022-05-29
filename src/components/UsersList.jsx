@@ -29,7 +29,7 @@ const UsersList = ({ users, selectUser, deleteUser, formShow }) => {
                                         <button onClick={()=> deleteUser(user.id)} className='deleteicon'>
                                             <i className="fa-solid fa-trash-can"></i>
                                         </button>
-                                        <button onClick={() => {selectUser(user); formShow()}}className='editicon'>
+                                        <button onClick={() => {selectUser(user); formShow()}} className='editicon'>
                                             <i className="fa-solid fa-pencil"></i>
                                         </button>
                                     </div>
